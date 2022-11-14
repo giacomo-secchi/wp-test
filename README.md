@@ -16,3 +16,16 @@ dinamic is one that change after the save of your post
 
 I will choose static
 the slug for me will be wp-test
+
+Hit enter 
+and voilà evrining is ready for start
+
+run
+
+npx wp-env start
+
+and evrintng will start on localhost:8888
+
+you need docker desktop installed to make it work
+
+now the module is installed and activated on the local environment
