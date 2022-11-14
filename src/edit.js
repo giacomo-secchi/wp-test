@@ -1,4 +1,11 @@
 /**
+ * WordPress components that create the necessary UI elements for the block
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-components/
+ */
+import { TextControl } from '@wordpress/components';
+ 
+/**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
@@ -11,7 +18,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,9 +37,10 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
+	const blockProps = useBlockProps();
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Test Block – hello from the editor!', 'wp-test' ) }
-		</p>
+		<div { ...blockProps }>
+			<InnerBlocks />
+		</div>
 	);
 }
