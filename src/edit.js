@@ -44,10 +44,10 @@ export default function Edit() {
 		<Fragment>
 			<InspectorControls>
 				<Panel>
-					<PanelBody title="{ __( 'Animation:' ) }" initialOpen={ true }>
+					<PanelBody title={ __( 'Animation:' ) } initialOpen={ true }>
 						<PanelRow>
 						<SelectControl
-							label="Size"
+							label={ __( 'Select some users:' ) }
 							value={ "size" }
 							options={ [
 								{ label: 'Big', value: '100%' },
