@@ -37,3 +37,7 @@ so your folder will be your module workspace without all other cluttering thing 
 
 
 now the module is installed and activated on the local environment
+
+last of all run 
+npm start
+and the build script of the module will check all modification in the src folder and upgrade the files inside the build folder
