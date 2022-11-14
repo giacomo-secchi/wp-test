@@ -44,7 +44,7 @@ export default function Edit() {
 		<Fragment>
 			<InspectorControls>
 				<Panel>
-					<PanelBody title={ __( 'Animation:' ) } initialOpen={ true }>
+					<PanelBody title={ __( 'Animation' ) } initialOpen={ true }>
 						<PanelRow>
 						<SelectControl
 							label={ __( 'Select some users:' ) }
