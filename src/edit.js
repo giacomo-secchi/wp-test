@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
-import { TextControl } from '@wordpress/components';
+import { Button, Dropdown, Panel, PanelBody, PanelRow, SelectControl, TextControl } from '@wordpress/components';
  
 /**
  * Retrieves the translation of text.
@@ -18,7 +18,9 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+
+import { Fragment } from '@wordpress/element';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -39,8 +41,29 @@ import './editor.scss';
 export default function Edit() {
 	const blockProps = useBlockProps();
 	return (
-		<div { ...blockProps }>
-			<InnerBlocks />
-		</div>
+		<Fragment>
+			<InspectorControls>
+				<Panel>
+					<PanelBody title="Animation" initialOpen={ true }>
+						<PanelRow>
+						<SelectControl
+							label="Size"
+							value={ "size" }
+							options={ [
+								{ label: 'Big', value: '100%' },
+								{ label: 'Medium', value: '50%' },
+								{ label: 'Small', value: '25%' },
+							] }
+							// onChange={ ( newSize ) => setSize( newSize ) }
+							// __nextHasNoMarginBottom
+						/>
+						</PanelRow>
+					</PanelBody>
+				</Panel>		
+			</InspectorControls>
+			<div { ...blockProps }>
+				<InnerBlocks />
+			</div>
+		</Fragment>
 	);
 }
