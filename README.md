@@ -4,3 +4,7 @@ I would like to createa a wrapper block that will add grafic effects to inner el
 
 
 TODO: https://developer.wordpress.org/block-editor/how-to-guides/internationalization/
+
+
+Install wordpress icon 
+npm install @wordpress/icons --save

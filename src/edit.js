@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
-import { Button, Dropdown, Panel, PanelBody, PanelRow, SelectControl, TextControl } from '@wordpress/components';
+import { Button, Dropdown, DropdownMenu, Panel, PanelBody, PanelRow, SelectControl, TextControl, Toolbar, ToolbarGroup, ToolbarDropdownMenu } from '@wordpress/components';
  
 /**
  * Retrieves the translation of text.
@@ -18,9 +18,12 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls, InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
 import { Fragment } from '@wordpress/element';
+
+import { paragraph, formatBold, formatItalic, link, table } from '@wordpress/icons';
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -42,21 +45,33 @@ export default function Edit() {
 	const blockProps = useBlockProps();
 	return (
 		<Fragment>
+			<BlockControls>
+				<Toolbar label="Options">
+					<ToolbarGroup>
+						<ToolbarDropdownMenu
+							icon={ table }
+							// toggleProps={ toolbarItemHTMLProps }
+							label="ssss"
+							controls={ [] }
+						/>
+					</ToolbarGroup>
+				</Toolbar>
+			</BlockControls>
 			<InspectorControls>
 				<Panel>
 					<PanelBody title={ __( 'Animation' ) } initialOpen={ true }>
 						<PanelRow>
-						<SelectControl
-							label={ __( 'Select some users:' ) }
-							value={ "size" }
-							options={ [
-								{ label: 'Big', value: '100%' },
-								{ label: 'Medium', value: '50%' },
-								{ label: 'Small', value: '25%' },
-							] }
-							// onChange={ ( newSize ) => setSize( newSize ) }
-							// __nextHasNoMarginBottom
-						/>
+							<SelectControl
+								label={ __( 'Select some users:' ) }
+								value={ "size" }
+								options={ [
+									{ label: 'Big', value: '100%' },
+									{ label: 'Medium', value: '50%' },
+									{ label: 'Small', value: '25%' },
+								] }
+								// onChange={ ( newSize ) => setSize( newSize ) }
+								// __nextHasNoMarginBottom
+							/>
 						</PanelRow>
 					</PanelBody>
 				</Panel>		
