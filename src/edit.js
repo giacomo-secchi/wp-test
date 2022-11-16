@@ -20,7 +20,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { BlockControls, InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
 
-import { Fragment } from '@wordpress/element';
+import { useState, Fragment } from '@wordpress/element';
 
 import { paragraph, formatBold, formatItalic, link, table } from '@wordpress/icons';
 
@@ -41,8 +41,19 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
+
+	const [ item, setItem ] = useState( '' );
+
+ 
+
+	const onChangeAnimation = ( newAnimation ) => {
+		setAttributes( {
+			alignment: newAlignment === undefined ? 'none' : newAlignment,
+		} );
+	};
+
 	return (
 		<Fragment>
 			<BlockControls>
@@ -62,16 +73,22 @@ export default function Edit() {
 					<PanelBody title={ __( 'Animation' ) } initialOpen={ true }>
 						<PanelRow>
 							<SelectControl
-								label={ __( 'Select some users:' ) }
-								value={ "size" }
-								options={ [
-									{ label: 'Big', value: '100%' },
-									{ label: 'Medium', value: '50%' },
-									{ label: 'Small', value: '25%' },
-								] }
-								// onChange={ ( newSize ) => setSize( newSize ) }
-								// __nextHasNoMarginBottom
-							/>
+								label={ __( 'Select an animation:' ) }
+								value={ item }
+								onChange={ ( selection ) => { setItem( selection ) } }
+								__nextHasNoMarginBottom
+							>
+							<optgroup label="Attention seekers">
+								<option value="bounce">bounce</option>
+								<option value="flash">flash</option>
+								<option value="pulse">pulse</option>
+							</optgroup>
+							<optgroup label="Sauropods">
+								<option value="Diplodocus">Diplodocus</option>
+								<option value="Saltasaurus">Saltasaurus</option>
+								<option value="Apatosaurus">Apatosaurus</option>
+							</optgroup>
+							</SelectControl>
 						</PanelRow>
 					</PanelBody>
 				</Panel>		

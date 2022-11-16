@@ -7,6 +7,17 @@
 	"category": "design",
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
+	"attributes": {
+		"animation": {
+			"type": "string",
+			"default": "none"
+		}
+	},
+	"example": {
+        "attributes": {
+            "animation": "bounce"
+        }
+    },
 	"supports": {
 		"html": false
 	},
