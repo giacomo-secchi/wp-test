@@ -8,14 +8,29 @@
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"attributes": {
-		"animation": {
+		"animationName": {
 			"type": "string",
-			"default": "none"
+			"enum": [ "backInDown", "backInLeft", "backInRight", "backInUp" ]
+		},
+		"animationSpeed": {
+			"type": "string",
+			"enum": [ "large", "small", "tiny" ]
+		},
+		"animationDelay": {
+			"type": "string",
+			"enum": [ "large", "small", "tiny" ]
+		},
+		"animationRepeat": {
+			"type": "string",
+			"enum": [ "large", "small", "tiny" ]
 		}
 	},
 	"example": {
         "attributes": {
-            "animation": "bounce"
+            "animationName": "bounce",
+            "animationSpeed": "fast",
+            "animationDelay": "delay-2s",
+            "animationRepeat": "repeat-1"
         }
     },
 	"supports": {
