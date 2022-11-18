@@ -24,3 +24,24 @@ function write_poetry_wp_test_block_init() {
 	register_block_type( __DIR__ . '/build' );
 }
 add_action( 'init', 'write_poetry_wp_test_block_init' );
+
+
+function write_poetry_wp_test_enqueue_common_assets() {
+	// wp_enqueue_style(
+	// 	'gutenberg-boilerplate-es5-step02',
+	// 	plugins_url( 'animate.min.css', __FILE__ ),
+	// 	array( 'wp-blocks' ),
+	// 	filemtime( plugin_dir_path( __FILE__ ) . 'animate.min.css' )
+	// );
+
+	//https://developer.wordpress.org/block-editor/how-to-guides/javascript/extending-the-block-editor/
+	
+	wp_enqueue_style( 'myguten-style', plugins_url( 'animate.min.css', __FILE__ ) );
+
+ 
+
+}
+add_action( 'enqueue_block_assets', 'write_poetry_wp_test_enqueue_common_assets' );
+
+ 
+ 
