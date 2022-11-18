@@ -58,8 +58,9 @@ export default function Edit( props ) {
 
 	const blockProps = useBlockProps( {
 		className: `${baseClassName} animate__${ animationName }`,
+		// 'data-id': 'special-h1-id'
 	} );
-console.log(blockProps);
+
 
 	// const [ item, setItem ] = useState( '' );
 
