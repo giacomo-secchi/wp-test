@@ -3,18 +3,19 @@
 	"apiVersion": 2,
 	"name": "write-poetry/wp-test",
 	"version": "0.1.0",
-	"title": "Test Block",
+	"title": "Animation",
 	"category": "design",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Animate inner content.",
 	"attributes": {
 		"animationName": {
 			"type": "string",
+			
 			"enum": [ "backInDown", "backInLeft", "backInRight", "backInUp" ]
 		},
 		"animationSpeed": {
 			"type": "string",
-			"enum": [ "large", "small", "tiny" ]
+			"enum": [ "slow", "slower", "fast", "faster" ]
 		},
 		"animationDelay": {
 			"type": "string",
@@ -22,15 +23,15 @@
 		},
 		"animationRepeat": {
 			"type": "string",
-			"enum": [ "large", "small", "tiny" ]
+			"enum": [ "repeat-1", "repeat-2", "repeat-3", "infinite" ]
 		}
 	},
 	"example": {
         "attributes": {
             "animationName": "bounce",
             "animationSpeed": "fast",
-            "animationDelay": "delay-2s",
-            "animationRepeat": "repeat-1"
+            "animationDelay": "2",
+            "animationRepeat": "infinite"
         }
     },
 	"supports": {

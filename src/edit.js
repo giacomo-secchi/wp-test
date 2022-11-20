@@ -38,6 +38,9 @@ import './editor.scss';
  */
  import metadata from './block.json';
 
+ import classnames from 'classnames';
+
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -54,10 +57,21 @@ export default function Edit( props ) {
 	} = props;
 
 
-	const baseClassName = 'animate__animated';
+	const baseClassName = 'animate__';
+
+
+	const classes = classnames( `${baseClassName}animated`, {
+		[`animate__${animationName}`]: true,
+		[`animate__${animationSpeed}`]: true,
+		[`${baseClassName}__delay-${animationDelay}s`]: true,
+		[`animate__${animationRepeat}`]: true,
+    } );
+
+	console.log(classes);
+
 
 	const blockProps = useBlockProps( {
-		className: `${baseClassName} animate__${ animationName }`,
+		className: classes,
 		// 'data-id': 'special-h1-id'
 	} );
 
@@ -225,15 +239,14 @@ export default function Edit( props ) {
 						<PanelRow>
 							<SelectControl
 								label={ __( 'Delay' ) }
-								// value={ item }
+								value={ animationDelay }
 								options={ [
 									{ value: '', label: 'Select a Delay', disabled: true },
-									{ value: 'delay-2s', label: '2s' },
-									{ value: 'delay-3s', label: '3s' },
-									{ value: 'delay-4s', label: '4s' },
-									{ value: 'delay-5s', label: '5s' },
+									{ value: '2', label: '2s' },
+									{ value: '3', label: '3s' },
+									{ value: '4', label: '4s' },
+									{ value: '5', label: '5s' },
 								] }
-								value={ animationName }
 								onChange={ onChangeAnimationDelay }
 								// __nextHasNoMarginBottom
 							>
@@ -245,10 +258,10 @@ export default function Edit( props ) {
 								value={ animationSpeed }
 								options={ [
 									{ value: '', label: 'Select the speed of the animation:', disabled: true },
-									{ value: 'slow', label: '2s' },
-									{ value: 'slower', label: '3s' },
-									{ value: 'fast', label: '800ms' },
-									{ value: 'faster', label: '500ms' },
+									{ value: 'slow', label: 'slow' },
+									{ value: 'slower', label: 'slower' },
+									{ value: 'fast', label: 'fast' },
+									{ value: 'faster', label: 'faster' },
 								] }
 								onChange={ onChangeAnimationSpeed }
 								// __nextHasNoMarginBottom
