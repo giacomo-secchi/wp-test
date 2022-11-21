@@ -9,21 +9,37 @@
 	"description": "Animate inner content.",
 	"attributes": {
 		"animationName": {
-			"type": "string",
-			
-			"enum": [ "backInDown", "backInLeft", "backInRight", "backInUp" ]
+			"type": "string"			
 		},
 		"animationSpeed": {
 			"type": "string",
-			"enum": [ "slow", "slower", "fast", "faster" ]
+			"enum": [ 
+				"slow", 
+				"slower",
+				"fast",
+				"faster"
+			],
+			"default": "fast"
 		},
 		"animationDelay": {
 			"type": "string",
-			"enum": [ "2", "3", "4", "5" ]
+			"enum": [ 
+				"2",
+				"3",
+				"4",
+				"5"
+			],
+			"default": "2"
 		},
 		"animationRepeat": {
 			"type": "string",
-			"enum": [ "repeat-1", "repeat-2", "repeat-3", "infinite" ]
+			"enum": [ 
+				"repeat-1",
+				"repeat-2",
+				"repeat-3",
+				"infinite"
+			],
+			"default": "repeat-2"
 		}
 	},
 	"example": {
@@ -40,5 +56,6 @@
 	"textdomain": "wp-test",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
 }

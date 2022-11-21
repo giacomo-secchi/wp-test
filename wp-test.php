@@ -35,7 +35,6 @@ function write_poetry_wp_test_enqueue_common_assets() {
 	// );
 
 	//https://developer.wordpress.org/block-editor/how-to-guides/javascript/extending-the-block-editor/
-	
 	wp_enqueue_style( 'myguten-style', plugins_url( 'animate.min.css', __FILE__ ) );
 
  

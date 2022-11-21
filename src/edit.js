@@ -67,7 +67,6 @@ export default function Edit( props ) {
 		[`animate__${animationRepeat}`]: true,
     } );
 
-	console.log(classes);
 
 
 	const blockProps = useBlockProps( {
@@ -75,8 +74,6 @@ export default function Edit( props ) {
 		// 'data-id': 'special-h1-id'
 	} );
 
-
-	// const [ item, setItem ] = useState( '' );
 
  
 
@@ -123,7 +120,7 @@ export default function Edit( props ) {
 					<PanelBody title={ __( 'Animation' ) } initialOpen={ true }>
 						<PanelRow>
 							<SelectControl
-								label={ __( 'Animation name' ) }
+								label={ __( 'Animation name', 'write-poetry-animation-block' ) }
 								// value={ item }
 								// onChange={ ( selection ) => { setItem( selection ) } }
 								value={ animationName }
@@ -157,88 +154,113 @@ export default function Edit( props ) {
 									<option value="backOutUp">backOutUp</option>
 								</optgroup>
 								<optgroup label="Bouncing entrances">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="bounceIn">bounceIn</option>
+									<option value="bounceInDown">bounceInDown</option>
+									<option value="bounceInLeft">bounceInLeft</option>
+									<option value="bounceInRight">bounceInRight</option>
+									<option value="bounceInUp">bounceInUp</option>
 								</optgroup>
 								<optgroup label="Bouncing exits">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="bounceOut">bounceOut</option>
+									<option value="bounceOutDown">bounceOutDown</option>
+									<option value="bounceOutLeft">bounceOutLeft</option>
+									<option value="bounceOutRight">bounceOutRight</option>
+									<option value="bounceOutUp">bounceOutUp</option>
 								</optgroup>
 								<optgroup label="Fading entrances">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="fadeIn">fadeIn</option>
+									<option value="fadeInDown">fadeInDown</option>
+									<option value="fadeInDownBig">fadeInDownBig</option>
+									<option value="fadeInLeft">fadeInLeft</option>
+									<option value="fadeInLeftBig">fadeInLeftBig</option>
+									<option value="fadeInRight">fadeInRight</option>
+									<option value="fadeInRightBig">fadeInRightBig</option>
+									<option value="fadeInUp">fadeInUpBig</option>
+									<option value="fadeInUpBig">fadeInUpBig</option>
+									<option value="fadeInTopLeft">fadeInTopLeft</option>
+									<option value="fadeInTopRight">fadeInTopRight</option>
+									<option value="fadeInBottomLeft">fadeInTopRight</option>
+									<option value="fadeInBottomRight">fadeInTopRight</option>
 								</optgroup>
 								<optgroup label="Fading exits">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="fadeOut">fadeOut</option>
+									<option value="fadeOutDown">fadeOutDown</option>
+									<option value="fadeOutDownBig">fadeOutDownBig</option>
+									<option value="fadeOutLeft">fadeOutLeft</option>
+									<option value="fadeOutLeftBig">fadeOutLeftBig</option>
+									<option value="fadeOutRight">fadeOutRight</option>
+									<option value="fadeOutRightBig">fadeOutRightBig</option>
+									<option value="fadeOutUp">fadeOutUp</option>
+									<option value="fadeOutUpBig">fadeOutUpBig</option>
+									<option value="fadeOutTopLeft">fadeOutTopLeft</option>
+									<option value="fadeOutTopRight">fadeOutTopRight</option>
+									<option value="fadeOutBottomRight">fadeOutBottomRight</option>
+									<option value="fadeOutBottomLeft">fadeOutBottomLeft</option>
 								</optgroup>
 								<optgroup label="Flippers">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="flip">flip</option>
+									<option value="flipInX">flipInX</option>
+									<option value="flipInY">flipInY</option>
+									<option value="flipOutX">flipOutX</option>
+									<option value="flipOutY">flipOutY</option>
 								</optgroup>
 								<optgroup label="Lightspeed">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="lightSpeedInRight">lightSpeedInRight</option>
+									<option value="lightSpeedInLeft">lightSpeedInLeft</option>
+									<option value="lightSpeedOutRight">lightSpeedOutRight</option>
+									<option value="lightSpeedOutLeft">lightSpeedOutLeft</option>
 								</optgroup>
 								<optgroup label="Rotating entrances">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="rotateIn">rotateIn</option>
+									<option value="rotateInDownLeft">rotateInDownLeft</option>
+									<option value="rotateInDownRight">rotateInDownRight</option>
+									<option value="rotateInUpLeft">rotateInUpLeft</option>
+									<option value="rotateInUpLeft">rotateInUpRight</option>
 								</optgroup>
 								<optgroup label="Rotating exits">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="rotateOut">rotateOut</option>
+									<option value="rotateOutDownLeft">rotateOutDownLeft</option>
+									<option value="rotateOutDownRight">rotateOutDownRight</option>
+									<option value="rotateOutUpLeft">rotateOutUpLeft</option>
+									<option value="rotateOutUpRight">rotateOutUpLeft</option>
 								</optgroup>
 								<optgroup label="Specials">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="hinge">hinge</option>
+									<option value="jackInTheBox">jackInTheBox</option>
+									<option value="rollIn">rollIn</option>
+									<option value="rollOut">rollOut</option>
 								</optgroup>
 								<optgroup label="Zooming entrances">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="zoomIn">zoomIn</option>
+									<option value="zoomInDown">zoomInDown</option>
+									<option value="zoomInLeft">zoomInLeft</option>
+									<option value="zoomInRight">zoomInRight</option>
+									<option value="zoomInUp">zoomInUp</option>
 								</optgroup>
 								<optgroup label="Zooming exits">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="zoomOut">zoomOut</option>
+									<option value="zoomOutDown">zoomOutDown</option>
+									<option value="zoomOutLeft">zoomOutLeft</option>
+									<option value="zoomOutRight">zoomOutRight</option>
+									<option value="zoomOutUp">zoomOutUp</option>
 								</optgroup>
 								<optgroup label="Sliding entrances">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="slideInDown">slideInDown</option>
+									<option value="slideInLeft">slideInLeft</option>
+									<option value="slideInRight">slideInRight</option>
+									<option value="slideInUp">slideInUp</option>
 								</optgroup>
 								<optgroup label="Sliding exits">
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
-									<option value=""></option>
+									<option value="slideOutDown">slideOutDown</option>
+									<option value="slideOutLeft">slideOutLeft</option>
+									<option value="slideOutRight">slideOutRight</option>
+									<option value="slideOutUp">slideOutUp</option>
 								</optgroup>
 							</SelectControl>
 						</PanelRow>
 						<PanelRow>
 							<SelectControl
-								label={ __( 'Delay' ) }
+								label={ __( 'Delay', 'write-poetry-animation-block' ) }
 								value={ animationDelay }
 								options={ [
 									{ value: '', label: 'Select a Delay', disabled: true },
@@ -254,7 +276,7 @@ export default function Edit( props ) {
 						</PanelRow>
 						<PanelRow>
 							<SelectControl
-								label={ __( 'Speed' ) }
+								label={ __( 'Speed', 'write-poetry-animation-block' ) }
 								value={ animationSpeed }
 								options={ [
 									{ value: '', label: 'Select the speed of the animation:', disabled: true },
@@ -270,7 +292,7 @@ export default function Edit( props ) {
 						</PanelRow>
 						<PanelRow>
 							<SelectControl
-								label={ __( 'Repeat' ) }
+								label={ __( 'Repeat', 'write-poetry-animation-block' ) }
 								value={ animationRepeat }
 								options={ [
 									{ value: '', label: 'Select the iteration count of the animation:', disabled: true },
