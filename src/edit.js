@@ -71,7 +71,7 @@ export default function Edit( props ) {
 
 	const blockProps = useBlockProps( {
 		className: classes,
-		// 'data-id': 'special-h1-id'
+		'data-animation': 'special-h1-id'
 	} );
 
 

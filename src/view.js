@@ -1,53 +1,48 @@
+
+
 const animateCSS = (element, animation, prefix = 'animate__') =>
-  // We create a Promise and return it
-  new Promise((resolve, reject) => {
-    const animationName = `${prefix}${animation}`;
-    const node = document.querySelector(element);
+// We create a Promise and return it
+new Promise((resolve, reject) => {
+  const animationName = `${prefix}${animation}`;
+  const node = document.querySelector(element);
 
-    node.classList.add(`${prefix}animated`, animationName);
+  node.classList.add(`${prefix}animated`, animationName);
 
-    // When the animation ends, we clean the classes and resolve the Promise
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove(`${prefix}animated`, animationName);
-      resolve('Animation ended');
+  // When the animation ends, we clean the classes and resolve the Promise
+  function handleAnimationEnd(event) {
+    event.stopPropagation();
+    node.classList.remove(`${prefix}animated`, animationName);
+    resolve('Animation ended');
+  }
+
+  node.addEventListener('animationend', handleAnimationEnd, {once: true});
+});
+
+  function onChange(entries, observer) {
+    for (entry of entries) {
+      if (entry.isIntersecting) {
+
+        // TODO: passare tramite data-attr the animation name
+        // animateCSS(entry, entry.target.dataset.animate);
+        observer.unobserve(entry.target)
+      }
     }
-
-    node.addEventListener('animationend', handleAnimationEnd, {once: true});
-  });
+  }
+  
+let observer = new IntersectionObserver(onChange);
+ 
 
 
  
 
-  // function onChange(entries, observer) {
-  //   for (entry of entries) {
-  //     if (entry.isIntersecting) {
-  //       animateCSS(entry, entry.target.dataset.animate);
-  //       observer.unobserve(entry.target)
-  //     }
-  //   }
-  // }
-  
-  // let observer = new IntersectionObserver(onChange);
-
-  // document.querySelectorAll('[data-animate]').forEach(
-  //   function(currentValue) {
-  //     observer.observe(currentValue);
-  //   }
-  // );
-
-
-  window.addEventListener(
-    'load',
-    function () {
-
-      
+window.addEventListener(
+  'load',
+  function () {
       document.querySelectorAll('.animate__animated').forEach(
         function(currentValue) {
-          console.log(currentValue);
-         // observer.observe(currentValue);
+          observer.observe(currentValue);
         }
       );
-},
-    false
+  },
+  false
 );
