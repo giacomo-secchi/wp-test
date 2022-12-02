@@ -18,11 +18,11 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { BlockControls, InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { BlockControls, InnerBlocks, InspectorControls, useBlockProps,	__experimentalBlockVariationPicker as BlockVariationPicker } from '@wordpress/block-editor';
 
 import { useState, Fragment } from '@wordpress/element';
 
-import { paragraph, formatBold, formatItalic, link, table } from '@wordpress/icons';
+import { paragraph, formatBold, formatItalic, link, table, cog } from '@wordpress/icons';
 
 
 /**
@@ -36,9 +36,62 @@ import './editor.scss';
 /**
  * Internal dependencies
  */
- import metadata from './block.json';
+import metadata from './block.json';
 
- import classnames from 'classnames';
+import classnames from 'classnames';
+
+import { Animation, Ball } from './MyIcon';
+
+function AnimationPlaceholder( ) {
+	return (
+	 
+			<BlockVariationPicker
+				icon={ animation }
+				label={__( 'Choose variation' )}
+				instructions={__( 'Select a variation to start with.' )}
+				// onSelect={(variation) => setAttributes({ // icon: variation.name})}
+				variations={[
+					{
+						name: "bed",
+						description: "An icon of a bed.",
+						title: "Bed",
+						icon: Ball
+					},
+					{
+						name: "bed",
+						description: "An icon of a bed.",
+						title: "Bed",
+						icon: Ball
+					},
+					{
+						name: "bed",
+						description: "An icon of a bed.",
+						title: "Bed",
+						icon: Ball
+					},
+					{
+						name: "bed",
+						description: "An icon of a bed.",
+						title: "Bed",
+						icon: Ball
+					},
+					{
+						name: "bed",
+						description: "An icon of a bed.",
+						title: "Bed",
+						icon: Ball
+					},
+					{
+						name: "bed",
+						description: "An icon of a bed.",
+						title: "Bed",
+						icon: Ball
+					}
+				]}
+			/>
+	 
+	);
+}
 
 
 /**
@@ -71,7 +124,6 @@ export default function Edit( props ) {
 
 	const blockProps = useBlockProps( {
 		className: classes,
-		'data-animation': 'special-h1-id'
 	} );
 
 
@@ -103,18 +155,7 @@ export default function Edit( props ) {
 
 	return (
 		<Fragment>
-			<BlockControls>
-				<Toolbar label="Options">
-					<ToolbarGroup>
-						<ToolbarDropdownMenu
-							icon={ table }
-							// toggleProps={ toolbarItemHTMLProps }
-							label="ssss"
-							controls={ [] }
-						/>
-					</ToolbarGroup>
-				</Toolbar>
-			</BlockControls>
+
 			<InspectorControls>
 				<Panel>
 					<PanelBody title={ __( 'Animation' ) } initialOpen={ true }>
@@ -311,15 +352,9 @@ export default function Edit( props ) {
 			</InspectorControls>
 			<div { ...blockProps }>
 				{ animationName  && ! isSelected ? (
-					
 					<InnerBlocks />
 				) : (
-					<Placeholder
-						label={ __( metadata.title ) }
-						instructions={ __( metadata.description ) }
-					>
-						<InnerBlocks />
-					</Placeholder>
+					AnimationPlaceholder()
 				) }
 			</div>
 		</Fragment>

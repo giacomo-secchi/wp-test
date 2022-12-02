@@ -1,6 +1,18 @@
 import { Icon } from '@wordpress/components';
 
-export const MyIcon = () => (
+
+ 
+
+export const Ball = () => (
+	<Icon
+		icon={ () => (
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12Z" fill="#FA6900"/>
+			</svg>
+		) }
+	/>
+);
+export const Animation = () => (
 	<Icon
 		icon={ () => (
 			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

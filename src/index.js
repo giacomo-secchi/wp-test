@@ -20,7 +20,7 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import metadata from './block.json';
-import { MyIcon } from './MyIcon';
+import { Animation, Ball } from './MyIcon';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -28,7 +28,19 @@ import { MyIcon } from './MyIcon';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType( metadata.name, {
-	icon: MyIcon,
+	icon: Animation,
+	/**
+	 * Sets animation.
+	 *
+	 * @param props
+	 * @returns {{'data-animationName': *}}
+	 */
+	getEditWrapperProps( attributes ) {
+		const { animationName } = attributes;
+		if ( undefined != animationName ) {
+			return { 'data-animationName': animationName };
+		}
+    },
 	/**
 	 * @see ./edit.js
 	 */

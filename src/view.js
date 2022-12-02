@@ -4,7 +4,8 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 // We create a Promise and return it
 new Promise((resolve, reject) => {
   const animationName = `${prefix}${animation}`;
-  const node = document.querySelector(element);
+  // const node = document.querySelector(element);
+  const node = element.target;
 
   node.classList.add(`${prefix}animated`, animationName);
 
@@ -22,18 +23,13 @@ new Promise((resolve, reject) => {
     for (entry of entries) {
       if (entry.isIntersecting) {
 
-        // TODO: passare tramite data-attr the animation name
-        // animateCSS(entry, entry.target.dataset.animate);
+        animateCSS(entry, entry.target.dataset.animation);
         observer.unobserve(entry.target)
       }
     }
   }
   
 let observer = new IntersectionObserver(onChange);
- 
-
-
- 
 
 window.addEventListener(
   'load',

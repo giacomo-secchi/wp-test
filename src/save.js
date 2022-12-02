@@ -19,7 +19,12 @@ import classnames from 'classnames';
  */
 export default function save( props ) {
 	const {
-		attributes: { animationName, animationSpeed, animationDelay, animationRepeat },
+		attributes: { 
+			animationName, 
+			animationSpeed, 
+			animationDelay, 
+			animationRepeat 
+		}
 	} = props;
 
 	const classes = classnames( 'animate__animated', {
@@ -29,9 +34,8 @@ export default function save( props ) {
 		[`animate__${animationRepeat}`]: true,
     } );
 	
-	 
 	
-	const blockProps = useBlockProps.save( { className: classes } );
+	const blockProps = useBlockProps.save( { className: classes, 'data-animation': animationName } );
 	return (
 		<div { ...blockProps }>
 			<InnerBlocks.Content />
