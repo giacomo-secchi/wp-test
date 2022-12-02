@@ -44,52 +44,50 @@ import { Animation, Ball } from './MyIcon';
 
 function AnimationPlaceholder( ) {
 	return (
-	 
-			<BlockVariationPicker
-				icon={ animation }
-				label={__( 'Choose variation' )}
-				instructions={__( 'Select a variation to start with.' )}
-				// onSelect={(variation) => setAttributes({ // icon: variation.name})}
-				variations={[
-					{
-						name: "bed",
-						description: "An icon of a bed.",
-						title: "Bed",
-						icon: Ball
-					},
-					{
-						name: "bed",
-						description: "An icon of a bed.",
-						title: "Bed",
-						icon: Ball
-					},
-					{
-						name: "bed",
-						description: "An icon of a bed.",
-						title: "Bed",
-						icon: Ball
-					},
-					{
-						name: "bed",
-						description: "An icon of a bed.",
-						title: "Bed",
-						icon: Ball
-					},
-					{
-						name: "bed",
-						description: "An icon of a bed.",
-						title: "Bed",
-						icon: Ball
-					},
-					{
-						name: "bed",
-						description: "An icon of a bed.",
-						title: "Bed",
-						icon: Ball
-					}
-				]}
-			/>
-	 
+		<BlockVariationPicker
+			icon={ animation }
+			label={__( 'Choose variation' )}
+			instructions={__( 'Select a variation to start with.' )}
+			// onSelect={(variation) => setAttributes({ // icon: variation.name})}
+			variations={[
+				{
+					name: "bed",
+					description: "An icon of a bed.",
+					title: "Bed",
+					icon: Ball
+				},
+				{
+					name: "bed",
+					description: "An icon of a bed.",
+					title: "Bed",
+					icon: Ball
+				},
+				{
+					name: "bed",
+					description: "An icon of a bed.",
+					title: "Bed",
+					icon: Ball
+				},
+				{
+					name: "bed",
+					description: "An icon of a bed.",
+					title: "Bed",
+					icon: Ball
+				},
+				{
+					name: "bed",
+					description: "An icon of a bed.",
+					title: "Bed",
+					icon: Ball
+				},
+				{
+					name: "bed",
+					description: "An icon of a bed.",
+					title: "Bed",
+					icon: Ball
+				}
+			]}
+		/>
 	);
 }
 
