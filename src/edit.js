@@ -42,19 +42,21 @@ import classnames from 'classnames';
 
 import { Animation, Ball } from './MyIcon';
 
-function AnimationPlaceholder( ) {
+function AnimationPlaceholder( { setAttributes } ) {
+ 
 	return (
 		<BlockVariationPicker
-			icon={ animation }
-			label={__( 'Choose variation' )}
-			instructions={__( 'Select a variation to start with.' )}
-			// onSelect={(variation) => setAttributes({ // icon: variation.name})}
+			icon={ Animation }
+			label={ __( 'Choose variation' ) }
+			instructions={ __( 'Select a variation to start with.' ) }
+			onSelect={ (variation) => setAttributes( {   } )}
 			variations={[
 				{
-					name: "bed",
-					description: "An icon of a bed.",
-					title: "Bed",
-					icon: Ball
+					name: "backInUp",
+					description: "backInUp animation.",
+					title: "backInUp",
+					icon: Ball,
+					attributes: { animationName: 'backInUp' }
 				},
 				{
 					name: "bed",
